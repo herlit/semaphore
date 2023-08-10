@@ -1,0 +1,14 @@
+---
+- name: Install Midnight Commander (mc)
+  hosts: your_target_servers
+  become: yes  # Run tasks as root
+  tasks:
+    - name: Update package cache
+      ansible.builtin.apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"  # Adjust for other package managers
+
+    - name: Install Midnight Commander
+      ansible.builtin.package:
+        name: mc
+        state: present

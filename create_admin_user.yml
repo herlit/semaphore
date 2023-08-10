@@ -1,0 +1,20 @@
+- hosts: all
+  gather_facts: yes
+  become: yes
+  become_user: root
+  tasks:
+    - name: Import and execute role tasks
+      ansible.builtin.import_role:
+        name: create_admin_user
+      vars:
+        tasks_from: main  # Specify the tasks file within the role to be executed
+- hosts: all
+  gather_facts: yes
+  become: yes
+  become_user: root
+  tasks:
+    - name: Import and execute role tasks
+      ansible.builtin.import_role:
+        name: create_admin_user
+      vars:
+        tasks_from: main  # Specify the tasks file within the role to be executed

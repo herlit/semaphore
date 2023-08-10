@@ -1,0 +1,8 @@
+admin:
+  - name: 'hsalva_semaphore'
+    comment: 'Ultimate User'
+    uid: '1005'
+
+  - name: 'semaphore'
+    comment: 'Semaphore App User'
+    uid: '1006'
