@@ -1,0 +1,22 @@
+---
+- name: Install Netcat
+  hosts: your_target_host
+  become: yes  # Run tasks as root
+
+  tasks:
+    - name: Update package cache
+      apt:
+        update_cache: yes
+      when: ansible_os_family == 'Debian'  # For Debian/Ubuntu systems
+
+    - name: Install Netcat package
+      package:
+        name: netcat
+        state: present
+      when: ansible_os_family == 'Debian'  # For Debian/Ubuntu systems
+
+    - name: Install Netcat package (for Red Hat based systems)
+      package:
+        name: nmap-ncat
+        state: present
+      when: ansible_os_family == 'RedHat'  # For Red Hat/CentOS systems
