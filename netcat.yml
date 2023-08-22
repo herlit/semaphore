@@ -1,6 +1,6 @@
 ---
 - name: Install Netcat
-  hosts: your_target_host
+  hosts: my_host
   become: yes  # Run tasks as root
 
   tasks:
